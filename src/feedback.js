@@ -5,7 +5,6 @@ const fs = require('fs');
 const path = require('path');
 const rootFolder = path.resolve(__dirname);
 
-
 /**
  * Gives feedback to the user.
  *
