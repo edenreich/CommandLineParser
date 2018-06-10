@@ -37,7 +37,7 @@ class CommandlineParser
 		}
 
 		this.applicationName = config.application_name || 'CommandlineParser';
-		this.feedback = new Feedback(config.labels);
+		this.feedback = new Feedback(config);
 		this.availableCommands = config.commands;
 	}
 
@@ -93,6 +93,8 @@ class CommandlineParser
 
 		if (typeof command == 'undefined') {
 			help = true;
+		} else {
+			this.failedCommand = command;
 		}
 	
 		inputs = {
@@ -111,7 +113,7 @@ class CommandlineParser
 	 */
 	showHelp(name = 'index')
 	{
-		this.feedback.showHelp(name);
+		this.feedback.showHelp(name, this.failedCommand);
 	}
 }
 

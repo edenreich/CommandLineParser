@@ -16,7 +16,7 @@ const args = process.argv;
 
 // Configure the Application.
 const config = {
-  handler: 'path/to/my/awesome/class/handler',
+  handler: 'path/to/my/awesome/handler',
   labels: {
     application_name: "My Awesome Application",
     application_filename: "my-app",
@@ -24,13 +24,14 @@ const config = {
   },
   commands: [{
     name: "empty-trash",
+    description: "Empty the trash",
     options: [{
       name: "--my-option",
-      value: "option-value"
+      description: "with my first option"
     },
     {
       name: "--my-option2",
-      value: "option-value2"
+      description: "with my second option 2"
     }]
   }]
 };
@@ -42,7 +43,7 @@ let command = cliParser.parse(args);
 
 // Execute the command.
 if (command.requestedForHelp()) {
-  cliParser.showHelp('index');
+  cliParser.showHelp('index', cliParser.failedCommand());
 } else {
   command.execute();
 }

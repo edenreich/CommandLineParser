@@ -14,13 +14,14 @@ const config = {
 	},
 	commands: [{
 		name: "empty-trash",
+		description: "Empty the trash",
 		options: [{
 			name: "--my-option",
-			value: "option-value"
+			description: "with my first option"
 		},
 		{
 			name: "--my-option2",
-			value: "option-value2"
+			description: "with my second option 2"
 		}]
 	}]
 };
