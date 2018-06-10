@@ -87,7 +87,12 @@ class CommandlineParser
 				};
 
 				options.push(option);
+				inputs.splice(input, 1);
 			}
+		}
+
+		if (typeof command == 'undefined') {
+			help = true;
 		}
 	
 		inputs = {
