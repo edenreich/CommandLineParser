@@ -22,6 +22,17 @@ const config = {
 			name: "--my-option2",
 			description: "with my second option 2"
 		}]
+	},{
+		name: "empty-trash-2",
+		description: "Empty the trash",
+		options: [{
+			name: "--my-option",
+			description: "with my first option"
+		},
+		{
+			name: "--my-option2",
+			description: "with my second option 2"
+		}]
 	}]
 };
 

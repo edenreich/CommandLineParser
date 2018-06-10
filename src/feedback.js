@@ -141,8 +141,8 @@ function decorateOptions(command = undefined)
 function decorateCommands()
 {
 	return this.config.commands.map(function(command) {
-		return command.name+'\t\t\t'+command.description+'\n';
-	});
+		return command.name+'\t\t\t'+command.description+'\n\t';
+	}).join('');
 }
 
 module.exports = Feedback;
