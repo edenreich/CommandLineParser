@@ -64,3 +64,15 @@ module.exports = Commands;
 
 Now every command you declared above will correspond a camelcase static method on the above configured handler.
 For instance command empty-trash is corresponding to static emptyTrash() method.
+
+## Application Help
+You may create template files that matches the way your help look.
+In the root directory create a folder called help:
+```sh
+mkdir help
+```
+
+By default the parser will look for an ```index``` file, if you want to use different templates you may pass it as an argument:
+```javascript
+cliParser.showHelp('my-template');
+```
