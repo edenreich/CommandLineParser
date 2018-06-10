@@ -14,7 +14,7 @@ npm install edenreich-commandline-parser
 const CommandlineParser = require('edenreich-commandline-parser');
 const args = process.argv;
 
-// Configure the Application
+// Configure the Application.
 const config = {
   handler: 'path/to/my/awesome/class/handler',
   labels: {
@@ -37,15 +37,15 @@ const config = {
 
 let cliParser = new CommandlineParser(config);
 
-// Parse the arguments
+// Parse the arguments.
 let command = cliParser.parse(args);
 
+// Execute the command.
 if (command.requestedForHelp()) {
-  return cliParser.showHelp();
+  cliParser.showHelp('index');
+} else {
+  command.execute();
 }
-
-// Lastly Execute the command
-command.execute();
 ```
 
 ## Handler

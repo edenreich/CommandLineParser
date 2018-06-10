@@ -30,7 +30,7 @@ let cliParser = new CommandlineParser(config);
 let command = cliParser.parse(args);
 
 if (command.requestedForHelp()) {
-	return cliParser.showHelp();
+	cliParser.showHelp('index');
+} else {
+	command.execute();
 }
-
-command.execute();
