@@ -1,0 +1,22 @@
+{
+  "name": "edenreich-commandline-parser",
+  "version": "1.0.0",
+  "description": "An easy to interact with commandline interface written in javascript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edenreich/CommandLineParser.git"
+  },
+  "keywords": [
+    "commandline",
+    "command-line",
+    "commandline-parser",
+    "cli"
+  ],
+  "author": "Eden Reich <eden.reich@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edenreich/CommandLineParser/issues"
+  },
+  "homepage": "https://github.com/edenreich/CommandLineParser#readme"
+}

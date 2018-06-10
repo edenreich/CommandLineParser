@@ -1,7 +1,6 @@
 #!bin/usr/env node
 
-const Commands = require('./commands');
-const Str = require('./Utils/str');
+const Str = require('../Utils/str');
 
 /**
  * Stores a command.
@@ -15,10 +14,10 @@ class Command
 	 *
 	 * @return void
 	 */
-	constructor(parsedInputs, commands)
+	constructor(parsedInputs, handler)
 	{
 		this.inputs = parsedInputs;
-		this.commands = commands;
+		this.handler = handler;
 	}
 
 	/**
@@ -30,8 +29,8 @@ class Command
 	{
 		let command = Str.dashToCamel(this.inputs.command);
 
-		if (typeof Commands[command] != 'undefined') {
-			Commands[command].call(this.commands, this.inputs.options);
+		if (typeof this.handler[command] != 'undefined') {
+			this.handler[command].call(this.handler, this.inputs.options);
 		}
 	}
 

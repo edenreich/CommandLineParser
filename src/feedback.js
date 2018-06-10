@@ -1,8 +1,8 @@
 #!bin/usr/env node
 
 const date = new Date;
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const rootFolder = path.resolve(__dirname);
 
 

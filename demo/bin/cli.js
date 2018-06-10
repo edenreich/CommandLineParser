@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
-const CommandlineParser = require('../../Utils/commandline-parser');
-const Feedback = require('../../Utils/feedback');
+const CommandlineParser = require('../../src/commandline-parser');
+const Feedback = require('../../src/feedback');
 
 const args = process.argv;
 
 const config = {
+	handler: 'src/Console/commands',
 	labels: {
 		application_name: "My Awesome Application",
 		application_filename: "my-app",
-		application_version: "1.0.1"
+		application_version: "1.0.0"
 	},
 	commands: [{
 		name: "empty-trash",

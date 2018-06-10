@@ -1,10 +1,11 @@
 #!bin/usr/env node
 
-const Str = require('./str');
-const Command = require('../command');
-const Commands = require('../commands');
+const Str = require('../Utils/str');
+const Command = require('./command');
 const Feedback = require('./feedback');
 const InputRecognizer = require('./input-recognizer');
+const path = require('path');
+const rootFolder = path.resolve(__filename);
 
 /**
  * Parse the commands.
@@ -22,6 +23,17 @@ class CommandlineParser
 	{
 		if (typeof config != 'object') {
 			throw new Error('config must be an object!');
+		}
+		
+		if (typeof config.handler == 'undefined') {
+			throw new Error('Please supply an handler class for the commands!');
+		}
+
+		try {
+			this.handler = require(process.cwd()+'/'+config.handler);
+		} catch(e) {
+			console.error('>>> Could not resolve configured handler!');
+			process.exit(1);
 		}
 
 		this.applicationName = config.application_name || 'CommandlineParser';
@@ -41,6 +53,10 @@ class CommandlineParser
 		let command;
 		let options = [];
 
+		if (inputs.length == 0) {
+			help = true;
+		}
+
 		for (let input in inputs) {
 			var inputRecognizer = new InputRecognizer(inputs[input]);
 
@@ -49,14 +65,14 @@ class CommandlineParser
 				break;
 			}
 
-			if (typeof command == 'undefined' && inputRecognizer.isCommand()) {
+			if (inputRecognizer.isCommand() && typeof command == 'undefined') {
 				if (commandExists(inputs[input], this.availableCommands) === false) {
 					help = true;
 					break;
 				}
 
 
-				if (commandMethodExists(inputs[input]) === false) {
+				if (commandMethodExists(inputs[input], this.handler) === false) {
 					help = true;
 					break;
 				}
@@ -80,13 +96,13 @@ class CommandlineParser
 			options: options
 		};
 
-		return new Command(inputs, new Commands);
+		return new Command(inputs, this.handler);
 	}
 
 	/**
 	 * Displays the help for the user.
 	 *
-	 * @return void 
+	 * @return void
 	 */
 	showHelp(name = 'index')
 	{
@@ -105,11 +121,11 @@ function commandExists(command, commands)
 	return exists;
 }
 
-function commandMethodExists(command)
+function commandMethodExists(command, handler)
 {
 	command = Str.dashToCamel(command);
 
-	return typeof Commands[command] == 'function';
+	return typeof handler[command] == 'function';
 }
 
 module.exports = CommandlineParser;

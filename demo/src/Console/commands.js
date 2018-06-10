@@ -1,8 +1,4 @@
-#!bin/usr/env node
-
-const path = require('path');
-const fs = require('fs');
-const Feedback = require('./Utils/feedback');
+#!/usr/bin/env node
 
 /**
  * Stores the commands functions.
