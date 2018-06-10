@@ -1,0 +1,16 @@
+{%hr%}
+{%header%}
+{%hr%}
+
+{%client_name%} version: {%client_version%} date: {%current_time%}
+
+{%usage_title%}
+  {%client_name%} [options] [command]
+
+{%options_title%}
+  --help                     Display this help message
+  --my-option                Description
+  --my-option2               Description
+  
+{%commands_title%}
+  empty-trash                    Empty the trash
