@@ -43,7 +43,7 @@ let command = cliParser.parse(args);
 
 // Execute the command.
 if (command.requestedForHelp()) {
-  cliParser.showHelp('index', cliParser.failedCommand());
+  cliParser.showHelp('index');
 } else {
   command.execute();
 }
