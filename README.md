@@ -58,6 +58,8 @@ class Commands
     console.log(options);
   }
 }
+
+module.exports = Commands;
 ```
 
 Now every command you declared above will correspond a camelcase static method on the above configured handler.
