@@ -105,5 +105,5 @@ commands        - the list of commands
 
 You may also pass your own placeholders to the template:
 ```javascript
-cliParser.showHelp('template', undefined, { "placeholder_name": "placeholder_value"});
+cliParser.showHelp('template', undefined, {"placeholder_name": "placeholder_value"});
 ```
