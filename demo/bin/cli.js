@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const CommandlineParser = require('../../src/commandline-parser');
-const Feedback = require('../../src/feedback');
 
 const args = process.argv;
 
