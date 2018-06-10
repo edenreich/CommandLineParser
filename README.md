@@ -87,3 +87,21 @@ By default the parser will look for an ```index``` file, if you want to use diff
 ```javascript
 cliParser.showHelp('my-template');
 ```
+
+### Predefined Templates Placeholder
+
+hr              - line spacer
+header          - the application name 
+client_name     - the client name
+client_version  - the version of the application
+current_time    - the current time
+usage_title     - the usage title
+options_title   - the options title
+commands_title  - the commands title
+options         - the list of options
+commands        - the list of commands
+
+You may also pass your own placeholders to the template:
+```javascript
+cliParser.showHelp('template', undefined, { "placeholder_name": "placeholder_value"});
+```
