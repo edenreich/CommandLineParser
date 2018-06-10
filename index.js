@@ -1,5 +1,5 @@
 #!bin/usr/env node
 
-const parser = require('./Utils/commandline-parser');
+const parser = require('./src/commandline-parser');
 
 module.exports = parser;
