@@ -1,4 +1,4 @@
-<p align="center"><img src="https://s15.postimg.cc/sud9g0tuz/cli.png"></p>
+<p align="center"><img src="https://s15.postimg.cc/8k2mey5hn/cli.png"></p>
 
 ## CommandLineParser
 <br/>
