@@ -119,12 +119,12 @@ class Feedback
  */
 function decorateOptions(command = undefined)
 {
+	if (typeof command == 'undefined') {
+		return '';
+	}
+
 	return this.config.commands.map(function(declaredCommand) {
-		if (typeof command == 'undefined') {
-			return declaredCommand.options.map(function(option) {
-				return option.name+'\t\t\t'+option.description+'\n\t';
-			}).join('');
-		} else if (command == declaredCommand.name) {
+		if (command == declaredCommand.name) {
 			return declaredCommand.options.map(function(option) {
 				return option.name+'\t\t\t'+option.description+'\n\t';
 			}).join('');

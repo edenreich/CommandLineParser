@@ -61,6 +61,10 @@ class CommandlineParser
 			var inputRecognizer = new InputRecognizer(inputs[input]);
 
 			if (inputRecognizer.needHelp()) {
+				if (input >= 1) {
+					this.helpForCommand = inputs[Number(input)-1];
+				}
+
 				help = true;
 				break;
 			}
@@ -93,8 +97,6 @@ class CommandlineParser
 
 		if (typeof command == 'undefined') {
 			help = true;
-		} else {
-			this.failedCommand = command;
 		}
 	
 		inputs = {
@@ -113,7 +115,7 @@ class CommandlineParser
 	 */
 	showHelp(name = 'index')
 	{
-		this.feedback.showHelp(name, this.failedCommand);
+		this.feedback.showHelp(name, this.helpForCommand);
 	}
 }
 
