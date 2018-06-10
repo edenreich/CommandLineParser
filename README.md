@@ -1,4 +1,4 @@
-<p align="center"><img src="#"></p>
+<p align="center"><img src="https://s15.postimg.cc/sud9g0tuz/cli.png"></p>
 
 ## CommandLineParser
 <br/>
@@ -49,16 +49,16 @@ command.execute();
 ```
 
 ## Handler
-Now every command you declared above will correspond a camelcase static method on the above configured handler:
+Create an handler and configure the path on the parser:
 ```javascript
-const Commands = require('edenreich-commandline-parser');
-
-class Command extends Commands
+class Commands
 {
-  emptyTrash(options)
+  static emptyTrash(options)
   {
     console.log(options);
   }
 }
 ```
 
+Now every command you declared above will correspond a camelcase static method on the above configured handler.
+For instance command empty-trash is corresponding to static emptyTrash() method.
