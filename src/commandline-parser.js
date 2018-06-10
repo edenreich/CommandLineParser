@@ -111,14 +111,22 @@ class CommandlineParser
 	/**
 	 * Displays the help for the user.
 	 *
+	 * @param string | template
 	 * @return void
 	 */
-	showHelp(name = 'index')
+	showHelp(template = 'index')
 	{
-		this.feedback.showHelp(name, this.helpForCommand);
+		this.feedback.showHelp(template, this.helpForCommand);
 	}
 }
 
+/**
+ * Checks whether the command exists.
+ *
+ * @param string | command
+ * @param array | commands
+ * @return bool
+ */
 function commandExists(command, commands)
 {
 	var exists = false;
@@ -130,6 +138,13 @@ function commandExists(command, commands)
 	return exists;
 }
 
+/**
+ * Checks whether the command's method exists.
+ *
+ * @param string | command
+ * @param object | handler
+ * @return bool
+ */
 function commandMethodExists(command, handler)
 {
 	command = Str.dashToCamel(command);
