@@ -89,7 +89,7 @@ cliParser.showHelp('my-template');
 ```
 
 ### Predefined Templates Placeholder
-
+```
 hr              - line spacer
 header          - the application name 
 client_name     - the client name
@@ -100,6 +100,7 @@ options_title   - the options title
 commands_title  - the commands title
 options         - the list of options
 commands        - the list of commands
+```
 
 You may also pass your own placeholders to the template:
 ```javascript
