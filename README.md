@@ -55,7 +55,17 @@ class Commands
 {
   static emptyTrash(options)
   {
-    console.log(options);
+    options.forEach(function(option) {
+      switch(option.name)
+      {
+        case "--my-option":
+          // Handle option
+          break;
+        case "--my-option2":
+          // Handle option 2
+          break;
+      }
+    });
   }
 }
 
