@@ -64,7 +64,7 @@ class Feedback
 	{
 		let instance = this;
 
-		let template = fs.readFile(rootFolder + '/../Help/'+file, 'utf8', function(err, content) {
+		let template = fs.readFile(process.cwd()+'/help/'+file, 'utf8', function(err, content) {
 			if (err) {
 				throw err;
 			}

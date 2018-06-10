@@ -3,7 +3,7 @@
 const Str = require('../Utils/str');
 
 /**
- * Stores a command.
+ * Buleprint for a command.
  * 
  * @class Command
  */
