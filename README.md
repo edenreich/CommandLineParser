@@ -89,7 +89,7 @@ cliParser.showHelp('my-template');
 ```
 
 ### Predefined Templates Placeholder
-Template variables should be surrounded by ```\{%variable_name%\}```, for example ```\{%hr%\}```.
+Template variables should be surrounded by ```{%variable_name%}```, for example ```{%hr%}```.
 ```
 hr              - line spacer
 header          - the application name 
