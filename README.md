@@ -11,7 +11,7 @@ npm install edenreich-commandline-parser
 
 ## Usage
 ```javascript
-const CommandlineParser = require('edenreich-commandline-parser');
+const CommandlineParser = require('edenreich-commandline-parser').parser;
 const args = process.argv;
 
 // Configure the Application.
@@ -107,4 +107,26 @@ commands        - the list of commands
 You may also pass your own placeholders to the template:
 ```javascript
 cliParser.showHelp('template', undefined, {"placeholder_name": "placeholder_value"});
+```
+
+## Progressbar
+You may also use the built in progressbar to give feedback to your users:
+```javascript
+const CommandlineParser = require('edenreich-commandline-parser').parser;
+
+class Commands
+{
+  static emptyTrash(options)
+  {
+    progressbar.start();
+
+    // handle operation that takes 4 sec.
+
+    setTimeout(function() {
+      progressbar.stop();
+    }, 4000);
+  }
+}
+
+module.exports = Commands;
 ```

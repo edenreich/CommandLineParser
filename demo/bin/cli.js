@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const CommandlineParser = require('../../src/commandline-parser');
+const CommandlineParser = require('../../index.js').parser;
 
 const args = process.argv;
 
