@@ -1,6 +1,6 @@
 {
   "name": "edenreich-commandline-parser",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "An easy to interact with commandline interface written in javascript",
   "main": "index.js",
   "repository": {
