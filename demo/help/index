@@ -8,7 +8,7 @@
 	{%client_name%} [options] [command]
 
 {%options_title%}
-	--help				Display this help message
+	{%options_help%}
   	{%options%}
   
 {%commands_title%}

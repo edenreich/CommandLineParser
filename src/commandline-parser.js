@@ -31,7 +31,7 @@ class CommandlineParser
 
 		try {
 			this.handler = require(process.cwd()+'/'+config.handler);
-		} catch(e) {
+		} catch (e) {
 			console.error('>>> Could not resolve configured handler!');
 			process.exit(1);
 		}

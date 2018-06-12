@@ -15,12 +15,12 @@ const config = {
 		name: "empty-trash",
 		description: "Empty the trash",
 		options: [{
-			name: "--my-option",
-			description: "with my first option"
+			name: "--all",
+			description: "empty all trash"
 		},
 		{
-			name: "--my-option2",
-			description: "with my second option 2"
+			name: "--half",
+			description: "empty just an half of the trash"
 		}]
 	}]
 };

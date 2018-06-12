@@ -99,6 +99,7 @@ current_time    - the current time
 usage_title     - the usage title
 options_title   - the options title
 commands_title  - the commands title
+options_help    - the help option
 options         - the list of options
 commands        - the list of commands
 ```

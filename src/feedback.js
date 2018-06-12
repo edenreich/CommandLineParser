@@ -87,6 +87,7 @@ class Feedback
 			let usageTitle = '\x1b[32mUsage\x1b[0m';
 			let optionsTitle = '\x1b[36mOptions\x1b[0m';
 			let commandsTitle = '\x1b[33mCommands\x1b[0m';
+			let optionsHelp = '--help\t\t\tdisplays this help message';
 			let options = decorateOptions.call(instance, command);
 			let commands = decorateCommands.call(instance);
 
@@ -98,6 +99,7 @@ class Feedback
 			content = content.replace(/\{%usage_title%\}/g, usageTitle);
 			content = content.replace(/\{%options_title%\}/g, optionsTitle);
 			content = content.replace(/\{%commands_title%\}/g, commandsTitle);
+			content = content.replace(/\{%options_help%\}/g, optionsHelp);
 			content = content.replace(/\{%options%\}/g, options);
 			content = content.replace(/\{%commands%\}/g, commands);
 
