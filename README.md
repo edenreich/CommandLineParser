@@ -112,18 +112,18 @@ cliParser.showHelp('template', undefined, {"placeholder_name": "placeholder_valu
 ## Progressbar
 You may also use the built in progressbar to give feedback to your users:
 ```javascript
-const CommandlineParser = require('edenreich-commandline-parser').parser;
+const Progressbar = require('edenreich-commandline-parser').progressbar;
 
 class Commands
 {
   static emptyTrash(options)
   {
-    progressbar.start();
+    Progressbar.start();
 
     // handle operation that takes 4 sec.
 
     setTimeout(function() {
-      progressbar.stop();
+      Progressbar.stop();
     }, 4000);
   }
 }
